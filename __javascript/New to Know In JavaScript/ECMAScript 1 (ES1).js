@@ -72,17 +72,53 @@ try {
     console.log(error);  // Outputs: An error occurred!
 }
 
-
 // 7) Prototypes
 //    * Objects in ECMAScript 1 are extensible using prototypes.
+
+// Define a constructor function for creating Animal objects
+// The constructor function sets the 'name' property on each Animal instance
+// constructor function Used to create objects
 function Animal(name) {
-    this.name = name;
+    this.name = name;  // The 'name' property is assigned to the created object
 }
+
+// Add a method to the Animal prototype
+// The 'speak' method is shared by all instances of Animal
+// Every function in JavaScript (including constructors like Animal) has a special property called prototype.
+// The prototype is an object where methods and properties can be added that will be shared by all instances of that function.
 Animal.prototype.speak = function() {
-    return this.name + " makes a noise.";
+    return this.name + " makes a noise.";  // Returns a string that combines the 'name' with a message
 };
 
+// Create an instance of the Animal constructor
+// The 'dog' instance is created with the name "Dog"
 var dog = new Animal("Dog");
+
+// Call the 'speak' method on the dog instance
+// The method uses the 'name' property of the dog instance and outputs the message
 console.log(dog.speak());  // Outputs: Dog makes a noise.
+
+//=====================================================================================
+/*NOte: Normal Function and Constructor Functions*/
+
+// Normal function to introduce a person
+function introduce(person) {
+    console.log("Hi, my name is " + person.name + " and I am " + person.age + " years old.");
+}
+
+// Constructor function to create a Person
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+// Create new Person instances
+var person1 = new Person("Alice", 25);
+var person2 = new Person("Bob", 30);
+
+// Use the normal function to introduce the people
+introduce(person1);  // Outputs: Hi, my name is Alice and I am 25 years old.
+introduce(person2);  // Outputs: Hi, my name is Bob and I am 30 years old.
+
 
 // ECMAScript 1 laid the groundwork for JavaScript's evolution, providing a basic yet powerful toolkit for developers.
