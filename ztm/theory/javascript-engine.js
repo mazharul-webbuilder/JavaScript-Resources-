@@ -19,3 +19,6 @@
 
 // JIT COMPILER
 // Just in Time Compiler is a compiler that compiles code on the fly as it runs combined with (interpreter and compiler)
+
+// Byte Code
+//  is a machine-readable form of JavaScript code that is used by the JavaScript engine to execute the code.
